@@ -16,14 +16,21 @@ namespace TimeAdder
             _discreteTimes = discreteTimes;
         }
 
-        public string ReturnTotalTime()
+        public TimeCalculationResult ReturnTotalTime()
         {
             long totalTimeInTicks = _discreteTimes.Sum(ts => ts.Ticks);
             TimeSpan totalTime = TimeSpan.FromTicks(totalTimeInTicks);
-            string unprettyTimeFormat = totalTime.ToString("g"); // 00:10:59.000 => 00:10:50.000
-            Regex regex = new Regex(@"(\.d+)$");
-            string prettyTimeFormat = regex.Replace(unprettyTimeFormat, String.Empty);
-            return prettyTimeFormat;
+            double totalTimeInHours = totalTime.TotalHours;
+            double totalTimeInMinutes = totalTime.TotalMinutes;
+            double totalTimeinSeconds = totalTime.TotalSeconds;
+            Func<double, string> c = Convert.ToString;
+            return new TimeCalculationResult
+            {
+                TotalTimeInHours = totalTimeInHours,
+                TotalTimeInMinutes = totalTimeInMinutes,
+                TotalTimeInSeconds = totalTimeinSeconds
+            };
         }
     }
+
 }

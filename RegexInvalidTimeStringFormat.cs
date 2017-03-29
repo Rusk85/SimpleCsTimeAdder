@@ -8,7 +8,7 @@ namespace TimeAdder
 {
     public class RegexInvalidTimeStringFormat : Exception
     {
-        private static string formatInput = "The time string {0} could not be matached";
+        private static string formatInput = "The time string {0} has an unknown format";
 
         private static string DisplayInvalidVariableWithContext(string message)
         {

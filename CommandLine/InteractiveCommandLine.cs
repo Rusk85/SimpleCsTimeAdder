@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace TimeAdder
+namespace TimeAdder.CommandLine
 {
-    public class CommandLineInterface
+    public class InteractiveCommandLine
     {
         private readonly string _startMessage =
             $"Please type in a time in this format: 20:10.{Environment.NewLine}Where 20 represent hours and 10 the minutes.{Environment.NewLine}Once fínished just press <Enter>.";
