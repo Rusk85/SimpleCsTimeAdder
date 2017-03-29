@@ -1,5 +1,6 @@
 # SimpleCsTimeAdder
-Very simple command line tool for adding up timespans such as 20:12, 1:1, 0:10 or 200:5000. Though the last one is untested but should be supported by the `TimeSpan` struct provided by C#.
+Very simple command line tool for adding up timespans such as `20:12`, `1:1`, `0:10`. <del>or 200:5000. Though the last one is untested but should be supported by the `TimeSpan` struct provided by C#.</del> As for `200:5000` the app is not supporting that formatting simply due to the way the regex pattern in use is set up.
+
 
 # Requirements
 - .NET Framework 4.5.2 >=
